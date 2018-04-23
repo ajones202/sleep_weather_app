@@ -12,7 +12,7 @@ sleepRouter.get('/all_days',sleepController.getAll, sleepViewController.showMont
 
 
 sleepRouter.route('/day/:id')
-    .get(sleepController.getByDate, sleepController.showWeather,sleepViewController.showOne )
+    .get(sleepController.getByDate, sleepController.showWeather,sleepViewController.showOne, )
     .put(sleepController.update, sleepViewController.handleUpdate)
     .delete(sleepController.destroy, sleepViewController.handleDelete);
 
