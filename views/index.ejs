@@ -1,0 +1,26 @@
+<%include partials/boilerplate %>
+<p><%= year[0] %></p>
+
+<div class='months-contain'>
+
+  <% monthsList2017.forEach( month => { %>
+  <div class='month-tiles'><h2><%= month %></h2></div>
+  <% }) %>
+
+
+</div>
+<button class='buttons' id='all-days'><a href='all_days'>View all</a></button>
+
+
+<p><%= year[1]%></p>
+
+<div class='months-contain'>
+  <% monthsList2018.forEach( month => { %>
+  <div class='month-tiles'><h2><%= month %></h2></div>
+  <% }) %>
+
+</div>
+
+<button class='buttons' id='all-days'><a href='all_days'>View all</a></button>
+<%include partials/end %>
+

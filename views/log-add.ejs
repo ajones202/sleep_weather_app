@@ -1,0 +1,21 @@
+<%include partials/boilerplate %>
+
+<h1>ADD A SLEEP LOG..</h1>
+
+<form method='POST' action='/'>
+
+  <label>Time you went to bed <input name='sleep_start' type='text' placeholder='' /></label><br>
+  <label>Time you woke up <input name='sleep_end' type='text' placeholder=''  /></label><br>
+  <label>Notes <input name='notes' type='text' placeholder='' /></label><br>
+  <label><input name='number_of_awakenings' type='hidden' placeholder='' /></label><br>
+  <label><input name='minutes_asleep' type='hidden' placeholder='' /></label><br>
+  <label><input name='time_in_bed,' type='hidden' placeholder='' /></label><br>
+  <label><input name='minutes_rem' type='hidden' placeholder='' /></label><br>
+  <label><input name='minutes_light' type='hidden' placeholder='' /></label><br>
+  <label><input name='minutes_deep' type='hidden' placeholder='' /></label><br>
+  <br>
+
+  <input type="submit" value="Add it" />
+</form>
+
+<% include partials/end %>

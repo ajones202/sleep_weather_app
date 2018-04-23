@@ -1,0 +1,25 @@
+{
+  "name": "sleep_weather-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "kelvin-to-fahrenheit": "^1.1.0",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "node-fetch": "^2.1.2",
+    "nodemon": "^1.17.3",
+    "pg-promise": "^8.4.0"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
