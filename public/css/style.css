@@ -3,9 +3,13 @@
   border: solid-black;
 }
 
-nav {
+hr {
 
   background-color: #00A9A5;
+  height: 10px;
+  border: none;
+  margin-bottom: 40px;
+
 }
 
 
@@ -17,6 +21,7 @@ nav {
 
 .nav-links {
   color: white;
+  font-family: 'Unica One', cursive;
 }
 
 .months-contain {
@@ -34,6 +39,11 @@ body {
 h1, h2 , p{
   font-family: 'Unica One', cursive;
 
+}
+
+h1 {
+  font-size:40px;
+  color:black;
 }
 
 h2 {
@@ -59,7 +69,7 @@ h2 {
 
 }
 
-button {
+button, .buttons {
   width: 100px; height: 50px;
   border-radius: 15px;
   font-family: 'Unica One', cursive;
