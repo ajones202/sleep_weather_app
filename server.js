@@ -5,8 +5,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
-
-
 const sleepRouter = require('./routes/sleep-routes');
 
 
@@ -28,7 +26,7 @@ app.listen(PORT, () => {
 })
 
 
-
+//index page
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'Sleep Log',

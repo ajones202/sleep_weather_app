@@ -1,36 +1,31 @@
 <%include partials/boilerplate %>
-
-  <h1><%= data.id%></h1>
+  <div class="form-contain">
+  <h1>Entry no. <%= data.id%></h1>
   <h1>You fell asleep at: <%= data.sleep_start%></h1>
   <h1>You spent <%= data.minutes_asleep%> minutes asleep</h1>
   <h1>You woke up <%=data.number_of_awakenings%> times during the night</h1>
-  <h1>ID <%=data.id%></h1>
+  <h1>The temperature was: <%=weather%> &deg F</h1>
 
 
 
 <form method="POST" action='/day/<%= data.id %>?_method=PUT'>
 
+  <label>Entry no.<input name='id' type='number' value='<%=data.id%>' placeholder='<%=data.id%>'/></label><br>
 
   <label>Time you went to bed<input name='sleep_start' type='text' value='<%=data.sleep_start%>' /></label><br>
-  <textarea name='minutes_deep' type='text' placeholder='' /></textarea><br>
-  <label>ID<input name='id' type='number' value='<%=data.id%>' placeholder='<%=data.id%>'/></label><br>
-  <textarea name='minutes_deep' type='text' placeholder='' /></textarea><br>
-  <label><input name='number_of_awakenings' type='text' placeholder='' /></label><br>
-  <label><input name='sleep_end' type='text' placeholder='' /></label><br>
-  <label><input name='minutes_asleep' type='text' placeholder='' /></label><br>
-  <label><input name='time_in_bed' type='text' placeholder='' /></label><br>
-  <label><input name='minutes_rem' type='text' placeholder='' /></label><br>
-  <label><input name='minutes_light' type='text' placeholder='' /></label><br>
+  <label>Time you woke up<input name='sleep_end' type='text' value='<%=data.sleep_end%>'/></label><br>
 
-  <br>
 
-<a href="<%=data.id%>/edit"><input type="submit" value="Submit Edit!"></a>
+<div> <a class='buttons' href="<%=data.id%>/edit"><input type="submit" value="Submit Edit!"></a></div>
+
 </form>
 
-<a href="/all_days/">See all</a>
+<a class="buttons" href="/all_days/">See all</a>
 
-<form method="POST" action='/day/<%= data.id %>?_method=DELETE'>
+
+<form class="buttons" method="POST" action='/day/<%= data.id %>?_method=DELETE'>
   <input type="Submit" value="Delete">
 </form>
+</div>
 <% include partials/end %>
 

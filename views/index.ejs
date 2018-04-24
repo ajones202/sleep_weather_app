@@ -4,7 +4,7 @@
 <div class='months-contain'>
 
   <% monthsList2017.forEach( month => { %>
-  <div class='month-tiles'><h2><%= month %></h2></div>
+  <a href='all_days'> <div class='month-tiles'><h2><%= month %></h2></div></a>
   <% }) %>
 
 
@@ -16,7 +16,8 @@
 
 <div class='months-contain'>
   <% monthsList2018.forEach( month => { %>
-  <div class='month-tiles'><h2><%= month %></h2></div>
+  <a href='all_days'><div class='month-tiles'><h2><%= month %></h2>
+  </div></a>
   <% }) %>
 
 </div>

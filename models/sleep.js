@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 
-
+//show all entries
  function showAll() {
   const queryPromise = db.many(`
     SELECT *
@@ -11,6 +11,7 @@ const db = require('../config/connection');
 
 };
 
+// show only the date specified
 function findByDate(id) {
   const queryPromise = db.one(`
     SELECT *
@@ -20,18 +21,7 @@ function findByDate(id) {
 };
 
 
-function findByMonthJan(month) {
-  const queryPromise = db.many(`
-    SELECT *
-    FROM sleep
-    WHERE sleep_start
-    LIKE '2018-01%'
-    `, month);
-  return queryPromise;
-};
-
-
-
+// add the new entry into the database
 function save(log) {
     const queryPromise = db.one(`INSERT INTO sleep
      (sleep_start, sleep_end, minutes_asleep, number_of_awakenings, minutes_rem, minutes_light, minutes_deep)
@@ -42,24 +32,19 @@ function save(log) {
     return queryPromise;
   };
 
+//change an entry
 function update(log) {
     return db.one(`
       UPDATE sleep
       SET
       sleep_start = $/sleep_start/,
-      sleep_end = $/sleep_end/,
-      minutes_asleep = $/minutes_asleep/,
-      number_of_awakenings = $/number_of_awakenings/,
-      time_in_bed = $/time_in_bed/,
-      minutes_rem = $/minutes_rem/,
-      minutes_light = $/minutes_light/,
-      minutes_deep = $/minutes_deep/
+      sleep_end = $/sleep_end/
       WHERE id = $/id/
       RETURNING *
     `, log);
       };
 
-
+// delete an entry
   function destroy(id) {
       return db.none(`
       DELETE

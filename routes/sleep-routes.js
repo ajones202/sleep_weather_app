@@ -23,6 +23,5 @@ sleepRouter.route('/')
 
 
 
-// sleepRouter.get('/test', sleepController.showWeather);
 
 module.exports = sleepRouter;

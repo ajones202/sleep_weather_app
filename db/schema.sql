@@ -1,6 +1,6 @@
--- DROP DATABASE IF EXISTS sleep_activity_db;
--- CREATE DATABASE sleep_activity_db;
--- \c sleep_activity_db
+DROP DATABASE IF EXISTS sleep_activity_db;
+CREATE DATABASE sleep_activity_db;
+\c sleep_activity_db
 
 DROP TABLE IF EXISTS sleep;
 

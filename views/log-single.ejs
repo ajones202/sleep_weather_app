@@ -1,10 +1,13 @@
 <%include partials/boilerplate %>
 
-  <h1>Entry no. <%= data.id%></h1>
+ <div class="form-contain">
+  <h1>Entry no. <%= data.id%>    </h1><br>
   <h1>You fell asleep at: <%= data.sleep_start%></h1>
+  <h1>You woke up at: <%= data.sleep_end%></h1>
   <h1>You spent <%= data.minutes_asleep%> minutes asleep</h1>
-  <h1>You woke up <%=data.number_of_awakenings%> times during the night</h1>
+  <h1>You woke up <%= data.number_of_awakenings%> times during the night</h1>
   <h1>The temperature was: <%=weather%> &deg F</h1>
+  </div>
 
 <form method="POST" action='/day/<%= data.id %>?_method=DELETE'>
   <input type="Submit" value="Delete">

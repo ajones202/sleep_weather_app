@@ -6,7 +6,6 @@ const kelvinToFahrenheit = require('kelvin-to-fahrenheit');
 module.exports = {
 
 
-
   getAll(req, res, next) {
     sleepDB.showAll()
     .then((sleep) => {
@@ -17,7 +16,6 @@ module.exports = {
   },
 
   getByDate(req, res, next) {
-    console.log(`These are your req.params =>${req.params.id}`);
     sleepDB.findByDate(req.params.id)
     .then((data) => {
       res.locals.data = data;
@@ -25,16 +23,6 @@ module.exports = {
     })
     .catch(err => next('error in show by date'));
   },
-
-  getByMonthJan(req,res,next) {
-    sleepDB.findByMonthJan(req.params.month)
-    .then((data) => {
-      res.locals.data = data;
-      next();
-    })
-    .catch(err => next('error in show by date'));
-  },
-
 
 
     create(req, res, next) {
@@ -47,7 +35,6 @@ module.exports = {
   },
 
     update(req, res, next) {
-    console.log(req.body, 'update controller');
     sleepDB.update(req.body)
       .then((data) => {
         res.locals.data = data;
@@ -61,6 +48,8 @@ module.exports = {
       .then(() => next())
       .catch(err => next(err));
   },
+
+  // weather fetch and promise. Weather returned in Fahrenheit
 
     showWeather(req, res, next){
     fetch('https://api.openweathermap.org/data/2.5/weather?zip=11231&APPID=cf8043db11d980a89be428b1c87735b0')
